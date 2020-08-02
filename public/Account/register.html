@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loginStyle.css"/>
+</head>
+<body>
+    
+    <div class="main-div" style=" margin-top: 50px;">
+        <h1>Rate my modules</h1>
+        
+
+        <div id="register">
+            <h2>Register Account</h2>
+            <div>
+                <p>To create an account, you must use your university email address, this is to validate you really are a student and prevent any fake or spam reviews. Your email address is completely hidden and anonymous to all other users of the site. We currently only support a limited number of Universities, we plan to support more in the future. For more information please read our terms and conditions. </p>    
+                <input maxlength="10" type="text" placeholder="User Name" id="email" 
+                style="float: left; width: 40%; border-radius: 5px 0px 0px 5px"/>
+    
+                <select id="uni" style="float: right; width: 60%;  border-radius: 0px 5px 5px 0px">
+                    <option value="@nottingham.ac.uk">@nottingham.ac.uk</option>
+                    <option value="@bristol.ac.uk">@bristol.ac.uk</option>
+                </select>
+            </div>
+    
+          
+    
+    
+            <input type="password" placeholder="Password" id="password"/>
+            <p>By registering you agree to the <a href="termsandconditions.html">terms and conditions.</a></p>
+            <button onclick="register()">Register Account</button>
+            <p><a href="login.html">Login to account.</a></p>    
+        </div>
+
+        <div id="confirm-email" style="display: none;">
+            <h2>Confirm your email</h2>
+            <p>We've sent you an email to confirm your email address. Please follow the instructions sent to you.</p>
+            <p>If you do not see the email please make sure to check your junk/spam folder.</p>
+        </div>
+       
+       
+        <div id="errorBox"></div>
+    </div>
+  
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+             authDomain: "rate-my-modules.firebaseapp.com",
+             databaseURL: "https://rate-my-modules.firebaseio.com",
+             projectId: "rate-my-modules",
+             storageBucket: "rate-my-modules.appspot.com",
+             messagingSenderId: "714973280124",
+             appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+             measurementId: "G-ZJWH0NEZP9"
+           };
+     
+           firebase.initializeApp(firebaseConfig);
+     </script>
+
+    <script src="account.js"></script>
+
+
+</body>
+</html>

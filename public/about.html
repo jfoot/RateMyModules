@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css"/>
+    <link rel="stylesheet" href="index.css"/>
+
+</head>
+<body>
+
+    <div class="header">
+        <a href="index.html" class="logo">Rate My Modules</a>
+        <div class="header-right">
+          <a href="/index.html">Home</a>
+          <a class="active" href="/about.html">About</a>
+          <a href="/Search/search.html">Search</a>
+          <a href="/Account/login.html">Login</a>
+        </div>
+    </div>
+
+   
+      <div class="main-div">
+        <h1>About Rate My Modules</h1>
+        <p>We let you both rate your previous modules and read the thoughts and opinions of others to help you decide upon which modules you would like to take. </p>
+
+        <h2>Data Security Summary</h2>
+        <p></p>
+
+       <h2>About Me</h2>
+        <p>I'm a Computer Science Student at the University of Nottingham, going into my third year
+          I was overwhelmed by the number of modules I found interesting and wanted to know which ones I should pick. I hope this site aids future students in picking the best modules for them.</p> 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+      </div>
+ 
+
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+             authDomain: "rate-my-modules.firebaseapp.com",
+             databaseURL: "https://rate-my-modules.firebaseio.com",
+             projectId: "rate-my-modules",
+             storageBucket: "rate-my-modules.appspot.com",
+             messagingSenderId: "714973280124",
+             appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+             measurementId: "G-ZJWH0NEZP9"
+           };
+     
+           firebase.initializeApp(firebaseConfig);
+     </script>
+
+     <script src="Module/moduleManger.js"></script>
+</body>
+</html>

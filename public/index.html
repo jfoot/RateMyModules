@@ -1,65 +1,100 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header.css"/>
+    <link rel="stylesheet" href="index.css"/>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.17.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.17.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.17.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.17.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.17.1/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+</head>
+<body>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete TEST 2</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <div class="header">
+    <a href="index.html" class="logo">Rate My Modules</a>
+    <div class="header-right">
+      <a class="active" href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/Search/search.html">Search</a>
+      <a href="/Account/login.html">Login</a>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+</div>
 
+   
+      <div class="main-div">
+        <h1>Welcome to Rate My Modules...</h1>
+        <h2>By Students, For Students.</h2>
+      
+        <p>We let you both rate your previous modules and read the thoughts and opinions of others to help you decide upon which modules you would like to take. </p>
+
+        <p>To view the reviews of modules simply click on the "Search" button above. To write your own review please register an account and login. You have to register an account using your University provided email address to verify you really are a student at that university.</p>
+        
+
+
+        <!-- <h3>About Me</h3>
+        <p>I'm a Computer Science Student at the University of Nottingham, going into my third year 
+          I was overwhelmed by the number of modules I found interesting and wanted to know which ones I should pick. I hope this site aids future students in picking the best modules for them.</p> -->
+
+        <h2>House Rules</h2>
+        
+        <p>All reviews are anonymous but we ask you follow our house rules, your account may be suspended if you abuse the system.</p>
+        <ul>
+          <li>Reviews should be accurate and honest.</li>
+          <li>No swearing or discrimination of any kind. Keep it civil.</li>
+          <li>No overly targeted or rude reviews about specific module conveners.</li>
+          <li>Don't create fake modules.</li>
+        </ul>
+        <p>If you find any content you believe is offensive please report it for review.</p>
+
+        <br>
+      <h2>Supported Universities:</h2>
+      <p>We currently only support a small number of Universities but hope to support more as we grow.</p>
+    
+    
+     <div class="cards">
+      <div class="card"  onclick="window.location='/Search/search.html?University=Nottingham'">   <img src="/Images/Nottingham.png" alt="Nottingham University Logo."  class="imageCard">
+      </div>
+      <div class="card"  onclick="window.location='/Search/search.html?University=Bristol'">  <img src="/Images/Bristol.png" alt="Bristol University Logo." class="imageCard">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+      </div>
+ 
+
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        const firebaseConfig = {
+             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+             authDomain: "rate-my-modules.firebaseapp.com",
+             databaseURL: "https://rate-my-modules.firebaseio.com",
+             projectId: "rate-my-modules",
+             storageBucket: "rate-my-modules.appspot.com",
+             messagingSenderId: "714973280124",
+             appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+             measurementId: "G-ZJWH0NEZP9"
+           };
+     
+           firebase.initializeApp(firebaseConfig);
+     </script>
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+     <script src="Module/moduleManger.js"></script>
+</body>
 </html>

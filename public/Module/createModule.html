@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Module</title>
+
+    <!-- development version, includes helpful console warnings
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="createModuleStyle.css"/>
+</head>
+<body>
+
+    <div class="main-div">
+        <h1>Rate my modules</h1>
+        
+<div id="form">
+
+    <div id="create">
+        <h2>Create A New Module</h2>
+        <div>
+            <p>Anyone can create a new module if the module doesn't already exist on the site. Simply fill out the form below.</p>
+            <br>
+
+            <form onsubmit="createModule(); return false;">
+              
+                <p>🔒 University:</p>
+                <div class="tooltip">How to change the University?
+                    <span class="tooltiptext">Your University is automatically detected based upon the account you've logged in with. </span>
+                  </div>
+                <input v-model="University" type="text" disabled />
+
+                <p>* Module ID Code: This should uniquely identify the module. eg. COMP2006</p>
+                <input v-model="IDCode"  maxlength="10" type="text" placeholder="Module ID Code" id="id" style="text-transform: uppercase;" required/>
+                
+                <p>* Module Name: This should be the easily recognizable name for the module. eg. C++ Programming</p>
+                <input v-model="Name" minlength="6" type="text" placeholder="Module Name" id="name" required/>
+
+                <p>* School: This should be the school associated with the module. eg. Computer Science</p>
+                <div class="tooltip">I don't see my school listed?
+                    <span class="tooltiptext">Sorry to hear that, please contact support at: <a href="mailto:ratemymodules@jonathanfoot.com">ratemymodules@jonathanfoot.com</a> to add it.</span>
+                  </div>
+                <select  id="uni" required  v-model="selected">
+                    <option v-for="school in Schools">
+                        {{ school }}
+                    </option>
+                </select>
+
+                <p> Module Description: An optional summary description for the module.</p>
+                <textarea id="description" v-model="Description" rows="4" cols="75" placeholder="Module Description" >
+                       
+                </textarea>
+
+
+                <p>Current Module Convenor: Whoever teaches the courses. Eg. Dr J Foot</p>
+                <input v-model="Lecturer" type="text" placeholder="Module Convenor" id="lecturer"/>
+
+
+                <h4>You can not delete a module once created. By clicking on "Create Module" you confirm the information is accurate and acknowledge abuse of the system will result in account suspension.</h4>
+                <button type="submit">Create Module</button>
+           
+            </form>
+        </div>
+        
+
+
+    </div>
+
+
+    <div id="created" style="display: none;" >
+        <h2>New Module Created : {{ IDCode }} - {{ Name }} </h2>
+        <p>You can now add ratings for this module.</p>
+        <p>Thank you for helping to grow Rate My Modules!</p>
+    </div>
+
+</div>
+
+
+        <div id="notLogged" style="display: none;" >
+            <h2>User Not Logged In</h2>
+            <p>To access this page you need to be logged in.</p>
+            <p>Please <a href="/Account/login.html">login or register</a> a new account.</p>
+        </div>
+       
+      
+
+       
+        <div id="errorBox"></div>
+    </div>
+  
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+            authDomain: "rate-my-modules.firebaseapp.com",
+            databaseURL: "https://rate-my-modules.firebaseio.com",
+            projectId: "rate-my-modules",
+            storageBucket: "rate-my-modules.appspot.com",
+            messagingSenderId: "714973280124",
+            appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+            measurementId: "G-ZJWH0NEZP9"
+        };
+    
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="/Scripts/UserInfo.js"></script>
+
+    <script src="createModule.js"></script>
+</body>
+</html>

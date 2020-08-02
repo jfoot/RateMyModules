@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+
+    <link rel="stylesheet" href="/header.css"/>
+    <link rel="stylesheet" href="/index.css"/>
+    <link rel="stylesheet" href="search.css"/>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">Rate My Modules</a>
+        <div class="header-right">
+          <a href="/index.html">Home</a>
+          <a href="/about.html">About</a>
+          <a  class="active" href="/Search/search.html">Search</a>
+          <a href="/Account/login.html">Login</a>
+        </div>
+    </div>
+
+    <div id="loading" class="Loading" style="display: block;">
+        <h1>Loading...</h1>
+        <div id="loader1" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+   
+   
+
+
+    <div id="results"  class="main-div" style="display: none;">
+        <img id="uniLogo" style="height: 100px;">
+        <h2 style="align-content: left;">{{Uni}} - School of {{School}}</h2>
+    
+        <p>Try searching for the module below, using either its ID or name. If you can not find the module feel free to click on the Create Missing Module button at the bottom of the page.</p>
+     
+        <input type="text" v-model="Search"  placeholder="Search by Module Name or ID" id="search" required/>
+
+              
+
+        <blog-post
+            v-for="post in activeUsers"
+            v-bind:key="post.id"
+            v-bind:post="post"
+            ></blog-post>
+
+
+        <h1 v-if="activeUsers.length == 0" style="width:100%; text-align: center;">No Results Found</h1>
+        <h2 v-if="activeUsers.length == 0" style="width:100%; text-align: center;">Feel free to add the missing module.</h2>
+
+        <button onclick="location.href='/Module/createModule.html';">Can't find the Module? Create the Module Here.</button>
+
+      
+    </div>
+ 
+
+  
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+            authDomain: "rate-my-modules.firebaseapp.com",
+            databaseURL: "https://rate-my-modules.firebaseio.com",
+            projectId: "rate-my-modules",
+            storageBucket: "rate-my-modules.appspot.com",
+            messagingSenderId: "714973280124",
+            appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+            measurementId: "G-ZJWH0NEZP9"
+        };
+    
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="/Scripts/UserInfo.js"></script>
+    <script src="SearchResults.js"></script>
+
+</body>
+</html>

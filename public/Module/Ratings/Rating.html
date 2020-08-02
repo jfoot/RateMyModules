@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Ratings.css"/>
+</head>
+<body>
+    
+
+    <div class="main-div">
+       
+        
+<div id="form">
+
+    <div id="ratings">
+        <h1>Rate {{Name}} -  {{ID}}</h1>
+        <h2>Rate my modules</h2>
+        <div>
+            <p>Your Rating Module  {{Name}} -  {{ID}}, at the {{University}}. Please rate honestly and fairly, if you post offensive content against our House Rules it will be removed and your account may be suspended. </p>
+            <p><b>All ratings are anonymous and you can edit or delete your rating after submission at any time.</b></p>
+            <br>
+
+    
+                <h3>1. I believe the course was well taught and structured.</h3>
+                <div class="some-class">
+                  <input type="radio"  name="q1" value="1" id="q1-1" v-model="TaughtAndStructured"/>
+                  <label for="q1-1">Strongly Disagree</label>
+                  <input type="radio" name="q1" value="2" id="q1-2" v-model="TaughtAndStructured"/>
+                  <label for="q1-2">Disagree</label>
+                  <input type="radio"  name="q1" value="3" id="q1-3" checked v-model="TaughtAndStructured"/>
+                  <label for="q1-3">Undecided</label>
+                  <input type="radio" name="q1" value="4" id="q1-4" v-model="TaughtAndStructured"/>
+                  <label for="q1-4">Agree</label>
+                  <input type="radio" name="q1" value="5" id="q1-5" v-model="TaughtAndStructured"/>
+                  <label for="q1-5">Strongly Agree</label>
+                </div>
+            <br>
+
+            <h3>2. I believe the workload was appropriate.</h3>
+            <div class="some-class">
+                <div class="some-class">
+                    <input type="radio"  name="q2" value="1" id="q2-1" v-model="Workload" />
+                    <label for="q2-1">Strongly Disagree</label>
+                    <input type="radio" name="q2" value="2" id="q2-2"  v-model="Workload" />
+                    <label for="q2-2">Disagree</label>
+                    <input type="radio"  name="q2" value="3" id="q2-3" checked  v-model="Workload" />
+                    <label for="q2-3">Undecided</label>
+                    <input type="radio" name="q2" value="4" id="q2-4"  v-model="Workload" />
+                    <label for="q2-4">Agree</label>
+                    <input type="radio" name="q2" value="5" id="q2-5"  v-model="Workload" />
+                    <label for="q2-5">Strongly Agree</label>
+                  </div>
+        </div>
+        <br>
+
+
+        <h3>3. The criteria used in marking my work was made clear to me.</h3>
+        <div class="some-class">
+            <input type="radio"  name="q4" value="1" id="q4-1" v-model="Marking" />
+            <label for="q4-1">Strongly Disagree</label>
+            <input type="radio" name="q4" value="2" id="q4-2"  v-model="Marking" />
+            <label for="q4-2">Disagree</label>
+            <input type="radio"  name="q4" value="3" id="q4-3" checked  v-model="Marking"/>
+            <label for="q4-3">Undecided</label>
+            <input type="radio" name="q4" value="4" id="q4-4"  v-model="Marking"/>
+            <label for="q4-4">Agree</label>
+            <input type="radio" name="q4" value="5" id="q4-5"  v-model="Marking"/>
+            <label for="q4-5">Strongly Agree</label>
+        </div>
+    <br>
+
+
+        <h3>4. The difficulty of the course was appropriate compared to other modules at the same level.</h3>
+        <div class="some-class">
+            <input type="radio"  name="q3" value="1" id="q3-1"  v-model="Difficulty" />
+            <label for="q3-1">Much Harder</label>
+            <input type="radio" name="q3" value="2" id="q3-2"  v-model="Difficulty"/>
+            <label for="q3-2">Slightly Harder</label>
+            <input type="radio"  name="q3" value="3" id="q3-3" checked  v-model="Difficulty"/>
+            <label for="q3-3">About Right</label>
+            <input type="radio" name="q3" value="4" id="q3-4"  v-model="Difficulty"/>
+            <label for="q3-4">Slightly Easier</label>
+            <input type="radio" name="q3" value="5" id="q3-5"  v-model="Difficulty"/>
+            <label for="q3-5">Much Easier</label>
+          </div>
+    </div>
+    <br>
+
+    <h3>5. (Optional) What was your final mark?</h3>
+    <div class="some-class">
+        <input type="radio"  name="q6" value="0" id="q6-0" checked  v-model="FinalMark"/>
+        <label for="q6-0"><b>Prefer Not To Answer</b></label>
+        <input type="radio"  name="q6" value="1" id="q6-1"  v-model="FinalMark"/>
+        <label for="q6-1">0-39%</label>
+        <input type="radio" name="q6" value="2" id="q6-2"  v-model="FinalMark"/>
+        <label for="q6-2">40-49%</label>
+        <input type="radio"  name="q6" value="3" id="q6-3"  v-model="FinalMark"/>
+        <label for="q6-3">50-59%</label>
+        <input type="radio" name="q6" value="4" id="q6-4"  v-model="FinalMark"/>
+        <label for="q6-4">60-69%</label>
+        <input type="radio" name="q6" value="5" id="q6-5"  v-model="FinalMark"/>
+        <label for="q6-5">70-79%</label>
+        <input type="radio" name="q6" value="6" id="q6-6"  v-model="FinalMark"/>
+        <label for="q6-6">80+%</label>
+      </div>
+
+  
+    <br>
+    <br>
+    <h2>Overall, how happy were you with the module and would you recommend it?</h2>
+    <p>1 being, very unhappy and strongly do not recommend it.</p>
+    <p>10 being, very happy and strongly recommend taking it.</p>
+    <div class="some-class">
+        <input type="radio"  name="q5" value="1" id="q5-1"  v-model="Overall"/>
+        <label for="q5-1">1</label>
+        <input type="radio" name="q5" value="2" id="q5-2" v-model="Overall"/>
+        <label for="q5-2">2</label>
+        <input type="radio"  name="q5" value="3" id="q5-3" v-model="Overall" />
+        <label for="q5-3">3</label>
+        <input type="radio" name="q5" value="4" id="q5-4" v-model="Overall"/>
+        <label for="q5-4">4</label>
+        <input type="radio" name="q5" value="5" id="q5-5" checked v-model="Overall"/>
+        <label for="q5-5">5</label>
+        <input type="radio"  name="q5" value="6" id="q5-6" v-model="Overall" />
+        <label for="q5-6">6</label>
+        <input type="radio" name="q5" value="7" id="q5-7" v-model="Overall"/>
+        <label for="q5-7">7</label>
+        <input type="radio"  name="q5" value="8" id="q5-8" v-model="Overall"/>
+        <label for="q5-8">8</label>
+        <input type="radio" name="q5" value="9" id="q5-9" v-model="Overall"/>
+        <label for="q5-9">9</label>
+        <input type="radio" name="q5" value="10" id="q5-10" v-model="Overall"/>
+        <label for="q5-10">10</label>
+    </div>
+
+    <br>
+    <br>
+    <h3>Comments</h3>
+    <p>If you have any comments you would like to share for future students please leave them here; 500 character limit. Otherwise please leave blank.</p>
+    <textarea id="comment" rows="4" cols="75" maxlength="500" placeholder="(Optional) Add your own comments here" v-model="Comments">      
+    </textarea>
+     
+        
+
+
+    <h4>By clicking on "Rate" you confirm your answers are honest and accurate.</h4>
+    <div id="errorBox"></div>
+    <button onclick="submitResults();">Rate</button>
+
+
+
+
+
+</div>
+
+
+
+    </div>
+
+
+    
+    <div id="rated" style="display: none;" >
+        <h1>Rating Submitted ✔️</h1>
+        <p>Your ratings have been included for this module.</p>
+        <p>Thank you for helping to grow Rate My Modules!</p>
+    </div>
+
+
+    <div id="notLogged" style="display: none;" >
+        <h2>User Not Logged In</h2>
+        <p>To submit a rating you need to be logged in.</p>
+        <p>Please <a href="/Account/login.html">login or register</a> a new account.</p>
+    </div>
+
+    
+    <div id="invalid" style="display: none;" >
+        <h2>Invalid Page</h2>
+        <p>It looks like you've followed a broken link.</p>
+        <p>The parameters passed to this page are missing or invalid.</p>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+            authDomain: "rate-my-modules.firebaseapp.com",
+            databaseURL: "https://rate-my-modules.firebaseio.com",
+            projectId: "rate-my-modules",
+            storageBucket: "rate-my-modules.appspot.com",
+            messagingSenderId: "714973280124",
+            appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+            measurementId: "G-ZJWH0NEZP9"
+        };
+    
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="/Scripts/UserInfo.js"></script>
+    <script src="Rating.js"></script>
+</body>
+</html>

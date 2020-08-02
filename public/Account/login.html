@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loginStyle.css"/>
+</head>
+<body>
+
+    <div class="main-div">
+        <h1>Rate my modules</h1>
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" id="email"/>
+        <input type="password" placeholder="Password" id="password"/>
+
+        <button onclick="login()">Login</button>
+        <p><a href="register.html">Register a new account.</a></p>
+
+        <div id="errorBox"></div>
+    </div>
+    
+
+
+
+
+   
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+             authDomain: "rate-my-modules.firebaseapp.com",
+             databaseURL: "https://rate-my-modules.firebaseio.com",
+             projectId: "rate-my-modules",
+             storageBucket: "rate-my-modules.appspot.com",
+             messagingSenderId: "714973280124",
+             appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+             measurementId: "G-ZJWH0NEZP9"
+           };
+     
+           firebase.initializeApp(firebaseConfig);
+     </script>
+
+    <script src="account.js"></script>
+    
+</body>
+</html>

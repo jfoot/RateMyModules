@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+
+    <link rel="stylesheet" href="/header.css"/>
+    <link rel="stylesheet" href="/index.css"/>
+    <link rel="stylesheet" href="search.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="logo">Rate My Modules</a>
+        <div class="header-right">
+          <a href="/index.html">Home</a>
+          <a href="/about.html">About</a>
+          <a  class="active" href="/Search/search.html">Search</a>
+          <a href="/Account/login.html">Login</a>
+        </div>
+    </div>
+
+    <div id="loading" class="Loading" style="display: none;">
+        <div id="loader1" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+   
+   
+
+    <div id="NotSelected" class="main-div" style="display: block;">
+        <h1>Please select your University:</h1>
+        <div class="cards">
+            <div class="card"  onclick="window.location='/Search/search.html?University=Nottingham'">   <img src="/Images/Nottingham.png" alt="Nottingham University Logo."  class="imageCard">
+            </div>
+            <div class="card"  onclick="window.location='/Search/search.html?University=Bristol'">  <img src="/Images/Bristol.png" alt="Bristol University Logo." class="imageCard">
+            </div>
+        </div>
+        <h3>Unforuntantly, if your university is not listed here we do not currently support it.</h3>
+    </div>
+
+
+    <div id="loading" class="Loading" style="display: none;">
+        <h1>Loading...</h1>
+        <div id="loader1" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+
+
+    <div id="Selected"  class="main-div" style="display: none;">
+        <img id="uniLogo" style="height: 100px;">
+        <h1>Please select your School:</h1>  
+       
+        <select  required  v-model="selected">
+            <option v-for="school in Schools">
+                {{ school }}
+            </option>
+        </select>
+        <button :disabled="selected == ''" v-on:click="search">Search</button>
+        <div class="tooltip">I don't see my school listed?
+            <span class="tooltiptext">Sorry to hear that, please contact support at: <a href="mailto:ratemymodules@jonathanfoot.com">ratemymodules@jonathanfoot.com</a> to add it.</span>
+        </div>
+    </div>
+ 
+
+  
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+            authDomain: "rate-my-modules.firebaseapp.com",
+            databaseURL: "https://rate-my-modules.firebaseio.com",
+            projectId: "rate-my-modules",
+            storageBucket: "rate-my-modules.appspot.com",
+            messagingSenderId: "714973280124",
+            appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+            measurementId: "G-ZJWH0NEZP9"
+        };
+    
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="/Scripts/UserInfo.js"></script>
+    <script src="Search.js"></script>
+
+</body>
+</html>

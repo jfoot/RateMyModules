@@ -1,0 +1,135 @@
+
+
+.main-div{
+    max-width: 1000px;
+    margin: 0px auto;
+    margin-top: 0px;
+    padding: 20px;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+}
+
+
+p, li {
+    font-size:18px;
+}
+
+
+.main-div input, select{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    transition : 0.3s ;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+
+.main-div input:focus{
+    border: 1px solid #777;
+}
+
+
+.main-div button {
+    display: block;
+    border: 1px solid #5d8ffc;
+    border-radius: 5px;
+    color: #fff;
+    background: #5d8ffc;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+.main-div button:hover{
+    background: #fff;
+    color: #5d8ffc;
+    border: 1px solid #5d8ffc;
+    cursor: pointer;
+}
+
+
+.warning--block {
+    white-space: normal;
+    padding: 0rem 1rem;
+  }
+
+
+  /* WarningBox */
+.warningBox {
+    border-radius: 5px;
+    background: rgb(223, 75, 75);
+    font-family: 'Nunito Sans', sans-serif;
+    border: 1px solid rgb(145, 1, 1);
+  }
+
+
+.infoBox {
+    border-radius: 5px;
+    background: rgb(150, 83, 236);
+    font-family: 'Nunito Sans', sans-serif;
+    border: 1px solid rgb(124, 4, 160);
+}
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    height: 8rem;
+    box-shadow: 1px 1px 3px #888888;
+  }
+  
+
+  .card:hover {
+
+    box-shadow: 1px 1px 20px #888888;
+    cursor: pointer;
+  }
+  
+
+  .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+
+  .imageCard {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    vertical-align: middle
+  }
+
+
+
+
+
+
+
+
+
+  

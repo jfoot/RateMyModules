@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="/header.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Module.css"/>
+</head>
+<body>
+
+
+    <div class="header">
+        <a href="index.html" class="logo">Rate My Modules</a>
+        <div class="header-right">
+          <a href="/index.html">Home</a>
+          <a href="/about.html">About</a>
+          <a  class="active" href="/Search/search.html">Search</a>
+          <a href="/Account/login.html">Login</a>
+        </div>
+    </div>
+
+
+
+    <div id="loader1" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+<div id="app" class="main-div" style="display: none;">
+
+
+  
+  
+    <h1>{{ Name }} ({{ ID }})</h1>
+    <h3>{{ University }} - {{ School }}</h3>
+
+
+
+
+    <p v-if=" Lecturer  != ''" id="lecturer">Taught By: {{ Lecturer }}</p>
+    <p v-if=" Lecturer  == ''" id="lecturer">Taught By: Unknown</p>
+   
+    <div v-if=" Description  != ''">
+        <h2>Description:</h2>
+        <p id="description">{{ Description }}</p>
+     </div>
+
+
+     <h2>Submit Your Own Ratings:</h2>
+     <p>If you would like to submit your own ratings simply click on the button below:</p>
+     <button style="max-width: 300px ;" onclick="submitRating()">Submit Ratings</button>
+
+    <h2>Ratings:</h2>
+    <pre class="infoBox warning--block">
+        <p style="color:white; align-content: center">
+            All ratings are from confirmed students at {{ University }}, however, no guarantees are made on their accuracy. </p></pre>
+    
+        <div id="loader2" class="lds-ellipsis" style="padding: 100px;"><div></div><div></div><div></div><div></div></div>
+           
+
+    <div id="Ratings" style="display: none;">
+
+        
+
+        <h1 style="text-align: center;">Overall Rating</h1>
+        <h1 style="text-align: center; font-size: 100;  margin:0; padding:0;">8/10</h1>
+        <h2 style="text-align: center;">This module is recommended by the majority of students. </h1>
+
+
+        <div style=" display: grid; grid-template-columns:  minmax(0, 1fr) minmax(0, 1fr);">
+        <div class="grid-item">
+            <h3>I believe the course was well taught and structured.</h3>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="grid-item">
+            <h3>I believe the workload was appropriate.</h3>
+            <canvas id="myChart2"></canvas>
+        </div>
+        <div class="grid-item">
+            <h3>I believe the difficulty of the course was appropriate.</h3>
+            <canvas id="myChart2"></canvas>
+        </div>  
+        <div class="grid-item">
+            <h3> The criteria used in marking my work was made clear to me.</h3>
+            <canvas id="myChart2"></canvas>
+        </div>
+        </div>
+        <h2>Comments:</h2>
+        <pre class="infoBox warning--block">
+        <p style="color:white; align-content: center">
+        Comments should follow our House Rules, if you find any offensive comments please report them.
+        </p>
+        </pre>
+
+
+    </div>
+        
+
+    
+</div>
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",
+            authDomain: "rate-my-modules.firebaseapp.com",
+            databaseURL: "https://rate-my-modules.firebaseio.com",
+            projectId: "rate-my-modules",
+            storageBucket: "rate-my-modules.appspot.com",
+            messagingSenderId: "714973280124",
+            appId: "1:714973280124:web:6361bb755f28a5f74fd6f9",
+            measurementId: "G-ZJWH0NEZP9"
+        };
+    
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="Module.js"></script>
+
+
+    
+</body>
+</html>
