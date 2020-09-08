@@ -170,6 +170,17 @@
     </div>
 
 
+
+       
+    <div id="loading" style="display: none;" >
+        <h1>Submitting Rating, Please Wait...</h1>
+        <p>We're adding your rating to our database. This can take some time while we work out the new averages.</p>
+        <p>Please do not close down this tab until completed...</p>
+        <div id="loader2" class="lds-ellipsis" style="padding: 100px;"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+
+
     <div id="notLogged" style="display: none;" >
         <h2>User Not Logged In</h2>
         <p>To submit a rating you need to be logged in.</p>
@@ -187,7 +198,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",

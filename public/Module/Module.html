@@ -28,6 +28,14 @@
 
     <div id="loader1" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 
+
+    <div class="main-div" id="invalid" style="display: none;" >
+        <h2>Invalid Page</h2>
+        <p>It looks like you've followed a broken link.</p>
+        <p>The parameters passed to this page are missing or invalid.</p>
+    </div>
+
+
 <div id="app" class="main-div" style="display: none;">
 
 
@@ -37,7 +45,8 @@
     <h3>{{ University }} - {{ School }}</h3>
 
 
-
+    <p id="credits">Number of Credits : {{ Credits }}</p>
+    <p id="level">Module Level : {{ Level }}</p>
 
     <p v-if=" Lecturer  != ''" id="lecturer">Taught By: {{ Lecturer }}</p>
     <p v-if=" Lecturer  == ''" id="lecturer">Taught By: Unknown</p>
@@ -57,7 +66,7 @@
         <p style="color:white; align-content: center">
             All ratings are from confirmed students at {{ University }}, however, no guarantees are made on their accuracy. </p></pre>
     
-        <div id="loader2" class="lds-ellipsis" style="padding: 100px;"><div></div><div></div><div></div><div></div></div>
+        <div id="loader2" class="lds-ellipsis" style="padding: 10px;"><div></div><div></div><div></div><div></div></div>
            
 
     <div id="Ratings" style="display: none;">
@@ -109,7 +118,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",

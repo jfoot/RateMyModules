@@ -38,9 +38,44 @@
     
         <p>Try searching for the module below, using either its ID or name. If you can not find the module feel free to click on the Create Missing Module button at the bottom of the page.</p>
      
-        <input type="text" v-model="Search"  placeholder="Search by Module Name or ID" id="search" required/>
 
-              
+        <h2>Search by Module ID</h2>
+       <p>If you know the Module ID code for the module you wish to view please type it in here to search for it.</p>
+        <div>
+            <input type="text" v-model="Search"  placeholder="Search by Module ID" id="search" 
+            style="float: left; width: 75%; border-radius: 5px 0px 0px 5px; text-transform: uppercase;"/>
+            <button onclick="Search()" style="float: right; width: 25%;  border-radius: 0px 5px 5px 0px; min-width: 65px;">Search</button>
+        </div>
+        
+
+        <br>
+       
+        <div id="errorBox"></div>
+      
+        <hr class="solid">
+        <br>
+        <h2>Explore Modules</h2>
+        <p>If you are just exploring the modules available use below and press "Load More" to view more modules. Filtering will only search through the modules that you have currently loaded, this is to save server resources. You should instead use the search feature above to view a specific module.</p>
+
+        <div style="margin-bottom: 2.5cm;">
+            <input type="text" v-model="Filter"  placeholder="Filter list by Module Name or ID" id="filter"   style="float: left; width: 65%; border-radius: 5px 0px 0px 5px;" />
+            <select  onchange="ReFilter()" id="year" style=" width: 35%;  border-radius: 0px 5px 5px 0px; float: right;">
+                <option value="All">All Years</option>
+                <option value="1">Year 1</option>
+                <option value="2">Year 2</option>
+                <option value="3">Year 3</option>
+                <option value="4">Year 4</option>
+                <option value="5">Year 5</option>
+                <option value="6">Year 6</option>
+                <option value="7">Year 7</option>
+            </select>
+        </div>
+
+ 
+
+
+
+
 
         <blog-post
             v-for="post in activeUsers"
@@ -49,8 +84,12 @@
             ></blog-post>
 
 
-        <h1 v-if="activeUsers.length == 0" style="width:100%; text-align: center;">No Results Found</h1>
-        <h2 v-if="activeUsers.length == 0" style="width:100%; text-align: center;">Feel free to add the missing module.</h2>
+        <h1 v-if="activeUsers.length == 0" style="width:100%; text-align: center;">No Filtered Results Found</h1>
+        <h2 v-if="activeUsers.length == 0" style="width:100%; text-align: center;">No Module from your loaded list matches your filter term.</h2>
+
+
+        <button id="LoadMore" onclick="LoadMore()">➕ Load More Modules...</button>
+
 
         <button onclick="location.href='/Module/createModule.html';">Can't find the Module? Create the Module Here.</button>
 
@@ -66,7 +105,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",

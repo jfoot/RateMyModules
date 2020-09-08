@@ -49,6 +49,14 @@
                     </option>
                 </select>
 
+
+                <p>* Number of Credits: How many credits is the module worth, eg 10 or 20.</p>
+                <input v-model="Credits"  type="number" min="0" max="60" placeholder="credits" id="credits" required/>
+
+
+                <p>* Level: when level is the module, ie, level 1 is first year, level 4 is 4th year/ master.</p>
+                <input v-model="Level"  type="number" min="0" max="7" placeholder="Level" id="Level" required/>
+
                 <p> Module Description: An optional summary description for the module.</p>
                 <textarea id="description" v-model="Description" rows="4" cols="75" placeholder="Module Description" >
                        
@@ -72,7 +80,7 @@
 
     <div id="created" style="display: none;" >
         <h2>New Module Created : {{ IDCode }} - {{ Name }} </h2>
-        <p>You can now add ratings for this module.</p>
+        <p>Soon you can add ratings for this module.</p>
         <p>Thank you for helping to grow Rate My Modules!</p>
     </div>
 
@@ -97,7 +105,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script>
         const firebaseConfig = {
             apiKey: "AIzaSyCdbwjl87f5yCdZ7KWH3Z02_sPrX7UJrLM",

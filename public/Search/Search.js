@@ -6,13 +6,13 @@ var uni = params.get('University') ;
 var app = new Vue({
     el: '#Selected',
     data: {
-        Uni : uni,
+        University : uni,
         Schools : [],
         selected : ''
     },
     methods: {
         search: function (event) {
-            window.location='/Search/searchResults.html?University=' + app.Uni + '&School=' + app.selected; 
+            window.location='/Search/searchResults.html?University=' + app.University + '&School=' + app.selected; 
         }
       }
 })
@@ -23,10 +23,11 @@ if(uni){
     document.getElementById('loading').style.display ="block";
     document.getElementById('uniLogo').src= "/Images/" + uni +".png";
 
-    firebase.database().ref(app.Uni  + '/Schools').once('value').then(function(snapshot) {
-        var data = snapshot.val().split(',');
-        app.Schools = data;
-        document.getElementById('loading').style.display ="none";
+
+    firebase.firestore().collection(app.University).doc('Schools').get().then((docSnapshot) => {
+        app.Schools = docSnapshot.data().Schools;
         document.getElementById('Selected').style.display ="block";
+        document.getElementById('loading').style.display ="none";
     });
+
 }
